@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <title>mega-kiosk-02-v2-adult</title>
+    <title>mega-kiosk-02-v3-adult</title>
     <style>
         * {
             padding: 0;
@@ -120,28 +120,29 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 44%;
             height: 11vh;
             max-height: 70px;
             /*height: 70px;*/
             text-decoration: none;
             font-style: normal;
-            font-weight: 400;
             font-size: 23px;
             line-height: 28px;
             text-align: center;
             color: #ffffff;
         }
-        .btn-cancel {
+        .btn-left {
             position: relative;
             background: #26C281;
             border: 2px solid #0CAA68;
+            width: 95%;
+            font-weight: bold;
         }
-        .btn-next {
-            background: #ED6B75;
-            border: 2px solid #EA5460;
-        }
-        .btn-cancel span {
+        /*.btn-right {*/
+        /*    background: #ED6B75;*/
+        /*    border: 2px solid #EA5460;*/
+        /*width: 44%;*/
+        /*}*/
+        .btn-left span {
             position: absolute;
             bottom: -20px;
             font-style: normal;
@@ -150,6 +151,24 @@
             line-height: 12px;
             text-align: center;
             color: #BCBCBC;
+        }
+        .cancel {
+            margin: 20px auto 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cancel-btn {
+            background: #C2C2C2;
+            border-radius: 65.5px;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            color: #000000;
+            text-decoration: none;
+            padding: 2px 11px;
         }
         /*.description {*/
         /*    font-style: normal;*/
@@ -178,7 +197,7 @@
         }
         @media (max-height: 550px) {
             .banner img {
-                width: 65%;
+                width: 50%;
             }
             .age {
                 right: 14px;
@@ -229,18 +248,27 @@
                </div>
            </div>
            <div class="btns-group">
-
                <div class="btn-wrap">
-                   <a href="#" class="btn btn-cancel">
+
+
+                   <a href="#" class="btn btn-left">
                         СМОТРЕТЬ
                        <span>Доступ к сайту XXX</span>
+
+
                    </a>
-                   <a href="#" class="btn btn-next">
-                       ОТМЕНА
+<!--                   <a href="#" class="btn btn-right">-->
+<!--                       ОТМЕНА-->
+<!--                   </a>-->
+
+
+               </div>
+           </div>
+               <div class="cancel">
+                   <a href="#" class="cancel-btn">
+                       Отмена
                    </a>
                </div>
-
-           </div>
 
 <!--        <div class="description">-->
 <!--            Новые журналы внутри-->
