@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>mega-kiosk-01-v3-adult</title>
+    <title>mega-kiosk-01-v4</title>
     <style>
         * {
             padding: 0;
@@ -58,7 +58,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -117%);
+            transform: translate(-50%, -107%);
             max-width: 300px;
             width: 90%;
             z-index: -1;
@@ -75,26 +75,24 @@
         }
         .btn-group {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             width: 100%;
             background: #1E1E1E;
-            height: 18vh;
-            max-height: 148px;
+            height: 24vh;
+            max-height: 156px;
             min-height: 70px;
         }
         .btn-wrap {
-            position: relative;
-            top: -10px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             width: 323px;
             max-width: 90%;
             margin: 0 auto;
             justify-content: space-around;
+            height: 100%;
+            padding: 4px 0;
         }
         .btn {
             display: flex;
@@ -116,7 +114,7 @@
             text-decoration: none;
         }
         .btn-center {
-            height: 14vh;
+            height: 16vh;
             max-height: 106px;
             /*max-width: 90%;*/
             width: 319px;
@@ -141,21 +139,17 @@
 
         }
         .btn-span {
-            position: absolute;
-            bottom: -1.5em;
             font-style: normal;
             font-weight: 400;
-            font-size: 12px;
-            line-height: 15px;
             text-align: center;
-            color: #9B9B9B;
+            font-size: 16px;
+            line-height: 19px;
+
+            color: #DEDEDE;
         }
         .description {
-            position: absolute;
-            bottom: -61px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
+            max-width: 320px;
+            width: 90%;
         }
         .description-text {
             font-style: normal;
@@ -169,6 +163,7 @@
         }
         .cancel {
             margin-top: 10px;
+            margin-bottom: 22px;
             text-align: center;
         }
         .cancel-btn {
@@ -266,18 +261,20 @@
            <div class="btn-group">
                <div class="btn-wrap">
                    <a href="#" class="btn btn-center">
-                       <span class="btn-center-text">ПРОДОЛЖИТЬ</span>
-                       <span class="btn-span">Доступ к сайту XXX</span>
+                       <span class="btn-center-text">СМОТРЕТЬ</span>
+                   </a>
+                       <span class="btn-span">Доступ к сайту XXX <br>
+30 руб./день</span>
+               </div>
+               <div class="cancel">
+                   <a href="#" class="cancel-btn">
+                       Отмена
                    </a>
                </div>
-            <div class="description">
-                <p class="description-text">Новые журналы внутри</p>
-                <div class="cancel">
-                    <a href="#" class="cancel-btn">
-                        Отмена
-                    </a>
+                <div class="description">
+                    <p class="description-text">Новые журналы внутри</p>
                 </div>
-            </div>
+
 
            </div>
 

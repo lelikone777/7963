@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>mega-kiosk-01-v3-adult</title>
+    <title>mega-kiosk-01</title>
     <style>
         * {
             padding: 0;
@@ -56,9 +56,9 @@
         }
         .banner {
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 50%;
-            transform: translate(-50%, -117%);
+            transform: translate(-50%, -110%);
             max-width: 300px;
             width: 90%;
             z-index: -1;
@@ -75,20 +75,16 @@
         }
         .btn-group {
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             width: 100%;
             background: #1E1E1E;
             height: 18vh;
-            max-height: 148px;
+            max-height: 120px;
             min-height: 70px;
         }
         .btn-wrap {
-            position: relative;
-            top: -10px;
             display: flex;
             align-items: center;
             width: 323px;
@@ -97,90 +93,50 @@
             justify-content: space-around;
         }
         .btn {
+            background: #FFFFFF;
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 65.5px;
             width: 44%;
             max-height: 70px;
             height: 10.5vh;
-            min-height: 35px;
-            position: relative;
-            background: #FFFFFF;
+            text-decoration: none;
             font-style: normal;
             font-weight: 400;
             font-size: 23px;
             line-height: 28px;
             text-align: center;
             color: #000000;
-            border-radius: 65.5px;
-            text-decoration: none;
+            min-height: 35px;
         }
-        .btn-center {
-            height: 14vh;
-            max-height: 106px;
-            /*max-width: 90%;*/
-            width: 319px;
-            text-align: center;
-            color: #000000;
+        .btn-right {
+            position: relative;
         }
-        .btn-center-text {
-            display: flex;
-            font-weight: 600;
-            font-size: 30px;
-            line-height: 36px;
-            text-align: center;
-            color: #000000;
-        }
-        .btn-center-text::after {
-            content: '';
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAfCAYAAAD0ma06AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADeSURBVHgBvZZhDYMwEIXfpmASJmEOsICDSZgEcDAJzMEkbA4moXOAhLc2YQmBAO1xdy/5+MGfL/S15QCgjvSRELnCIUnEEeZiLvCMnGEQbtBpi5lBWuYWSmEBKv1SQBJfIAx30EHQLxVoS8RUIiCzXyqzKaYRHRaWmcbMxHQgYLg4DsMLrzy8hd8jfPNOD48O0w+++VutZffIafyZVqIXFi54bdEnUmElmj3dkBENUYNJT1ZC0aAl3RAVhCkRBTjNNMU97RHODq6VMPUknszW0mPek3hD5KQeJNkHd09+YLah+B/6EYIAAAAASUVORK5CYII=');
-            background-repeat: no-repeat;
-            width: 35px;
-            height: 35px;
-            margin-left: 9px;
-
-        }
-        .btn-span {
+        .btn span {
             position: absolute;
             bottom: -1.5em;
             font-style: normal;
             font-weight: 400;
-            font-size: 12px;
-            line-height: 15px;
+            font-size: 10px;
+            line-height: 12px;
             text-align: center;
-            color: #9B9B9B;
+            color: #BCBCBC;
         }
         .description {
             position: absolute;
-            bottom: -61px;
+            bottom: -50px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100%;
-        }
-        .description-text {
+            width: 90%;
+            max-width: 291px;
             font-style: normal;
             font-weight: 300;
             font-size: 20px;
-            line-height: 27px;
+            line-height: 24px;
             text-align: center;
             color: #FFFFFF;
             border-top: 2px solid #FFFFFF;
-            padding-top: 4px;
-        }
-        .cancel {
-            margin-top: 10px;
-            text-align: center;
-        }
-        .cancel-btn {
-            background: #C2C2C2;
-            border-radius: 65.5px;
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 17px;
-            text-align: center;
-            color: #000000;
-            text-decoration: none;
-            padding: 2px 11px;
         }
         .footer {
             position: relative;
@@ -216,26 +172,6 @@
                 line-height: 22px;
             }
         }
-
-        @media (max-width: 350px) {
-            .btn-center {
-                width: 90%;
-            }
-            .btn-center-text {
-                font-size: 22px;
-            }
-        }
-        @media (max-width: 320px) {
-            .btn {
-                font-size: 18px;
-                line-height: 22px;
-            }
-        }
-        @media (max-width: 280px) {
-            .btn-center-text {
-                font-size: 18px;
-            }
-        }
         @media (orientation: landscape) {
             .banner {
                 display: none;
@@ -265,20 +201,17 @@
 
            <div class="btn-group">
                <div class="btn-wrap">
-                   <a href="#" class="btn btn-center">
-                       <span class="btn-center-text">ПРОДОЛЖИТЬ</span>
-                       <span class="btn-span">Доступ к сайту XXX</span>
+                   <a href="#" class="btn btn-left">
+                       ОТМЕНА
+                   </a>
+                   <a href="#" class="btn btn-right">
+                       ДАЛЕЕ
+                       <span>Доступ к сайту XXX</span>
                    </a>
                </div>
             <div class="description">
-                <p class="description-text">Новые журналы внутри</p>
-                <div class="cancel">
-                    <a href="#" class="cancel-btn">
-                        Отмена
-                    </a>
-                </div>
+                Новые журналы внутри
             </div>
-
            </div>
 
 
