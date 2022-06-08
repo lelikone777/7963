@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <title>mega-kiosk-01-adult</title>
+    <title>mega-kiosk-01-v2-adult</title>
     <style>
         * {
             padding: 0;
@@ -29,11 +29,8 @@
         a {
             color: inherit;
         }
-        .container {
-            max-width: 375px;
-            margin: 0 auto;
-        }
         .header {
+            position: relative;
             font-weight: 400;
             font-size: 12px;
             line-height: 15px;
@@ -41,12 +38,16 @@
             color: #F4F3F9;
             background: #24252A;
             border-bottom: 2px solid #1C1B21;
+            z-index: 1;
         }
         .header-text {
             max-width: 375px;
             margin: 0 auto;
         }
         .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -54,37 +55,45 @@
             width: 100%;
         }
         .banner {
-            display: flex;
-            justify-content: center;
-            position: relative;
-            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -110%);
             max-width: 300px;
             width: 90%;
+            z-index: -1;
         }
         .banner img {
+            position: relative;
             width: 100%;
         }
         .age {
             position: absolute;
-            right: -35px;
-            top: -30px;
-            width: 40px;
+            right: -13%;
+            top: -16%;
+            width: 14%;
         }
-        .btns-group {
-            position: relative;
-            top: -40px;
+        .btn-group {
             display: flex;
-            justify-content: space-around;
             align-items: center;
-            text-decoration: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
             background: #1E1E1E;
-            /*height: 120px;*/
-            height: 15.4vh;
+            height: 18vh;
+            max-height: 120px;
+            min-height: 70px;
         }
         .btn-wrap {
-            width: 323px;
-            margin: 0 auto;
+            position: relative;
+            bottom: 3px;
             display: flex;
+            align-items: center;
+            width: 323px;
+            max-width: 90%;
+            margin: 0 auto;
             justify-content: space-around;
         }
         .btn {
@@ -94,9 +103,8 @@
             align-items: center;
             border-radius: 65.5px;
             width: 44%;
-            /*height: 70px;*/
-            height: 8vh;
             max-height: 70px;
+            height: 10.5vh;
             text-decoration: none;
             font-style: normal;
             font-weight: 400;
@@ -104,10 +112,14 @@
             line-height: 28px;
             text-align: center;
             color: #000000;
+            min-height: 35px;
         }
-        .btn-cancel span {
+        .btn-right {
+            position: relative;
+        }
+        .btn span {
             position: absolute;
-            bottom: 4px;
+            bottom: -1.5em;
             font-style: normal;
             font-weight: 400;
             font-size: 10px;
@@ -116,17 +128,22 @@
             color: #BCBCBC;
         }
         .description {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 291px;
             font-style: normal;
-            font-weight: 600;
+            font-weight: 300;
             font-size: 20px;
             line-height: 24px;
             text-align: center;
             color: #FFFFFF;
             border-top: 2px solid #FFFFFF;
-            max-width: 290px;
-            margin: -20px auto 0;
         }
         .footer {
+            position: relative;
             background: #24252A;
             border-top: 1px solid #1C1B21;
             font-style: normal;
@@ -135,25 +152,23 @@
             line-height: 15px;
             text-align: center;
             color: #F4F3F9;
+            z-index: 1;
         }
         .footer-text {
             max-width: 375px;
             margin: 0 auto;
         }
         @media (max-height: 550px) {
-            .banner img {
-                width: 65%;
+            .banner {
+                width: 25%;
             }
-            .age {
-                right: 14px;
-                top: -16px;
-            }
+          
         }
-        @media (max-width: 380px) {
-            .age {
-                right: 0;
-                top: -43px;
-            }
+        @media (max-width: 374px) {
+          .banner {
+              width: 77%;
+          }
+
         }
         @media (max-width: 320px) {
             .btn {
@@ -171,8 +186,9 @@
               href="#">Условиями предоставления подписки</a>. Стоимость подписки: <30> руб. с учетом НДС в день. Оплата производится с основного/дополнительного счета. Услуга предоставляется Контент-провайдером <xxx>.
       </div>
     </div>
-    <div class="container">
     <div class="main">
+
+
 
 
            <div class="banner">
@@ -181,25 +197,26 @@
                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPKSURBVHgBzViLUeMwEFVM+M0wc3RwpoL4KrhQQUIFhAoOKkg6ACoAKiBUgKngQgXxVUBuhuEPuffMilkUOfEHLuyMYtmrfVqtdqXd1EwJGo/H63d3d+2FhYUG+k2+43OohiRsQRAMwLt4eXkZrK6uJqYg1YoMvr29bdZqtS66TVOc+pA9WV5e7ucVyKVchlIxJ4T1BvV6PQH/j2XAWt+fnp7C5+fnCK9tRy4Bb2ttbW1gqpBs3wHaWNrV/f19V7YxN2FxIVoH8kOFtV8U5x2gAiullI+IoxQccp4i8q5ixQE+C18LYpW/P8JaPiIu8XMrKD726YplKTh1PuX8w89WTCuotnjfO+j6+jqyjvrRPjaLxJWuZO7mxAC1nV0zB1JRfO4y2nY7zZxItved9QLhbacvQdBzheQADaeB0iUIWMUdcMOM0A6k332b3Odr7u3w+Pj40wW8ubnZtatV7bSskjJnisM+jBVEwott5kArMMTR/ZUFhDE9yDK6Rmi76Hew4mP023iemxJE65nXO9vAGK0AH6xF+moQwdfx3LKDPUDbstrNlZWVw6WlJWYcOzI+9EadEH0biz/KYFs9ogC5Vmo5ZheWCyscYKKNGelNyB83T4PSiWB8myaLRYU+Br5f8gm9moGdhGmPHQAr7ImJp1HMH20h+gmTTwG/NOUoked63Sqn87E8BCV2uP1s2KJjLoZHEkHRdrVFGc3YmciBSNMo+wLXYDI6ohy2PeXXTUkC2AggJwx7KNpBsyym5md67OLiYgvfeq5ykH3zOySgPGMv9IDSyjGaAR7SPzE5z6e/rCuoLNoQ1vphs11E3hlcJbGy2HJaemDPNVFucufstcXU2qcErxP3nFM3yqlH6Uyewpy8poTUuTsMrOPjZcPkpwZ/YLXEZdhoBUWmHIXyTKhcLKCNvNLYltQ3VFn4Rihq2tKdVsDELBt9DKsH+XWAXeID3wl6aHIQIirG9tHxI/oeo9Uqa14rrRH6e1nyCKbNKfBtwYon7jN3pM/nRJhZ7JHnbj3n0WFKkPeetwqUzeUYTNIqZc9SPr4PJp7ytgT8X+m5j1TC23IZlaxXlZjlZCa82npzqiFSX3t4ePCfGmDsz7P64vy5Bn65upX0ZSt+n4KFBHNSZXwHgIdiz1QkWkui8qrywgmmgiQFw/t2UUCPUqnzz3KZXP9sAijCZc9TO1SfY7S+5PyJznxF+VAucfefzRhZcQ854MWseQv9J4yEsIXWkQmLUm6lLBVSzhItg0karJCkeguN82+6VPAx+gOMPctRME3QP/UNhBfynjbmAAAAAElFTkSuQmCC" alt="">
                </div>
            </div>
-           <div class="btns-group">
 
+           <div class="btn-group">
                <div class="btn-wrap">
-                   <a href="#" class="btn btn-cancel">
-                       ОТМЕНА
+                   <a href="#" class="btn btn-right">
+                       ДАЛЕЕ
                        <span>Доступ к сайту XXX</span>
                    </a>
-                   <a href="#" class="btn btn-next">
-                       ДАЛЕЕ
+                   <a href="#" class="btn btn-left">
+                       ОТМЕНА
                    </a>
                </div>
+            <div class="description">
+                Новые журналы внутри
+            </div>
+
            </div>
 
-        <div class="description">
-            Новые журналы внутри
-        </div>
 
 
-    </div>
+
 </div>
 
     <div class="footer">

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <title>mega-kiosk-01-v4-adult</title>
+    <title>mega-kiosk-01-adult</title>
     <style>
         * {
             padding: 0;
@@ -29,8 +29,11 @@
         a {
             color: inherit;
         }
+        .container {
+            max-width: 375px;
+            margin: 0 auto;
+        }
         .header {
-            position: relative;
             font-weight: 400;
             font-size: 12px;
             line-height: 15px;
@@ -38,27 +41,16 @@
             color: #F4F3F9;
             background: #24252A;
             border-bottom: 2px solid #1C1B21;
-            z-index: 1;
         }
         .header-text {
             max-width: 375px;
             margin: 0 auto;
         }
-        .main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute;
-            top: 50%;
+        .banner {
+           position: absolute;
+            top: 33vh;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 100%;
-        }
-        .banner {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -117%);
             max-width: 300px;
             width: 90%;
             z-index: -1;
@@ -74,111 +66,69 @@
             width: 14%;
         }
         .btn-group {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             display: flex;
-            flex-direction: column;
             align-items: center;
             width: 100%;
             background: #1E1E1E;
             height: 18vh;
-            max-height: 156px;
             min-height: 70px;
         }
         .btn-wrap {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             width: 323px;
-            max-width: 90%;
             margin: 0 auto;
+            display: flex;
             justify-content: space-around;
-            height: 100%;
-            padding: 4px 0;
         }
         .btn {
+            background: #FFFFFF;
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 65.5px;
             width: 44%;
-            max-height: 70px;
+            /*height: 70px;*/
             height: 10.5vh;
-            min-height: 35px;
-            position: relative;
-            background: #FFFFFF;
+            text-decoration: none;
             font-style: normal;
             font-weight: 400;
             font-size: 23px;
             line-height: 28px;
             text-align: center;
             color: #000000;
-            border-radius: 65.5px;
-            text-decoration: none;
         }
-        .btn-center {
-            height: 14vh;
-            max-height: 106px;
-            /*max-width: 90%;*/
-            width: 319px;
-            text-align: center;
-            color: #000000;
+        .btn-right {
+            position: relative;
         }
-        .btn-center-text {
-            display: flex;
-            font-weight: 600;
-            font-size: 30px;
-            line-height: 36px;
-            text-align: center;
-            color: #000000;
-        }
-        .btn-center-text::after {
-            content: '';
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAfCAYAAAD0ma06AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADeSURBVHgBvZZhDYMwEIXfpmASJmEOsICDSZgEcDAJzMEkbA4moXOAhLc2YQmBAO1xdy/5+MGfL/S15QCgjvSRELnCIUnEEeZiLvCMnGEQbtBpi5lBWuYWSmEBKv1SQBJfIAx30EHQLxVoS8RUIiCzXyqzKaYRHRaWmcbMxHQgYLg4DsMLrzy8hd8jfPNOD48O0w+++VutZffIafyZVqIXFi54bdEnUmElmj3dkBENUYNJT1ZC0aAl3RAVhCkRBTjNNMU97RHODq6VMPUknszW0mPek3hD5KQeJNkHd09+YLah+B/6EYIAAAAASUVORK5CYII=');
-            background-repeat: no-repeat;
-            width: 35px;
-            height: 35px;
-            margin-left: 9px;
-
-        }
-        .btn-span {
+        .btn span {
+            position: absolute;
+            bottom: -27%;
             font-style: normal;
             font-weight: 400;
+            font-size: 10px;
+            line-height: 12px;
             text-align: center;
-            font-size: 16px;
-            line-height: 19px;
-
-            color: #DEDEDE;
+            color: #BCBCBC;
         }
         .description {
-            max-width: 320px;
+            position: absolute;
+            bottom: calc(-54px);
+            left: 50%;
+            transform: translateX(-50%);
             width: 90%;
-        }
-        .description-text {
+            max-width: 291px;
             font-style: normal;
-            font-weight: 300;
+            font-weight: 600;
             font-size: 20px;
-            line-height: 27px;
+            line-height: 24px;
             text-align: center;
             color: #FFFFFF;
             border-top: 2px solid #FFFFFF;
-            padding-top: 4px;
-        }
-        .cancel {
-            margin-top: 10px;
-            margin-bottom: 22px;
-            text-align: center;
-        }
-        .cancel-btn {
-            background: #C2C2C2;
-            border-radius: 65.5px;
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 17px;
-            text-align: center;
-            color: #000000;
-            text-decoration: none;
-            padding: 2px 11px;
         }
         .footer {
-            position: relative;
             background: #24252A;
             border-top: 1px solid #1C1B21;
             font-style: normal;
@@ -187,7 +137,6 @@
             line-height: 15px;
             text-align: center;
             color: #F4F3F9;
-            z-index: 1;
         }
         .footer-text {
             max-width: 375px;
@@ -197,7 +146,7 @@
             .banner {
                 width: 25%;
             }
-          
+
         }
         @media (max-width: 374px) {
           .banner {
@@ -211,26 +160,6 @@
                 line-height: 22px;
             }
         }
-
-        @media (max-width: 350px) {
-            .btn-center {
-                width: 90%;
-            }
-            .btn-center-text {
-                font-size: 22px;
-            }
-        }
-        @media (max-width: 320px) {
-            .btn {
-                font-size: 18px;
-                line-height: 22px;
-            }
-        }
-        @media (max-width: 280px) {
-            .btn-center-text {
-                font-size: 18px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -241,8 +170,7 @@
               href="#">Условиями предоставления подписки</a>. Стоимость подписки: <30> руб. с учетом НДС в день. Оплата производится с основного/дополнительного счета. Услуга предоставляется Контент-провайдером <xxx>.
       </div>
     </div>
-    <div class="main">
-
+    <div class="container">
 
 
 
@@ -254,23 +182,19 @@
            </div>
 
            <div class="btn-group">
+
                <div class="btn-wrap">
-                   <a href="#" class="btn btn-center">
-                       <span class="btn-center-text">СМОТРЕТЬ</span>
+                   <a href="#" class="btn btn-left">
+                       ОТМЕНА
                    </a>
-                       <span class="btn-span">Доступ к сайту XXX <br>
-30 руб./день</span>
-               </div>
-               <div class="cancel">
-                   <a href="#" class="cancel-btn">
-                       Отмена
+                   <a href="#" class="btn btn-right">
+                       ДАЛЕЕ
+                       <span>Доступ к сайту XXX</span>
                    </a>
                </div>
                 <div class="description">
-                    <p class="description-text">Новые журналы внутри</p>
+                    Новые журналы внутри
                 </div>
-
-
            </div>
 
 
