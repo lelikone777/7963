@@ -370,11 +370,12 @@
         }
         body {
             height: 100%;
-            background: transparent;
+            /*background: transparent;*/
             font-family: 'Inter', sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            background: #CCCCCC;
         }
         a {
             color: inherit;
@@ -482,11 +483,14 @@
             background: rgba(255, 255, 255, 0.8);
             border-radius: 0px 0px 20px 20px;
             width: 101%;
+            left: -1px;
         }
         .cancel {
             position: absolute;
             bottom: -15px;
             text-align: center;
+            left: 50%;
+            transform: translateX(-50%);
 
         }
         .cancel-btn {
@@ -565,23 +569,13 @@
             color: #D6D6D6;
             background: transparent;
         }
-        @media (max-height: 550px) {
-            .banner {
-                /*width: 25%;*/
+        @media (max-width: 320px) {
+            .btn {
+                font-size: 18px;
+                line-height: 22px;
             }
-          
         }
-        @media (max-width: 374px) {
-          .banner {
-              /*width: 77%;*/
-          }
-        }
-        @media (max-width: 340px) {
-            /*.pagination {*/
-            /*    font-size: 14px;*/
-            /*    line-height: 18;*/
-            /*}*/
-        }
+
         @media (max-width: 320px) {
             .btn {
                 font-size: 18px;
@@ -591,6 +585,42 @@
         @media (orientation: landscape) {
             .banner {
                 display: none;
+            }
+            .btn-group {
+                transform: translate(-50%, -80%);
+            }
+            .header-text, .footer-text {
+                font-size: 10px;
+                line-height: 12px;
+            }
+        }
+
+
+        @media screen and (device-aspect-ratio: 40/71) {
+        }
+
+
+
+        /*!*iphone5*!*/
+        @media screen and (device-aspect-ratio: 40/71) and (orientation: landscape) {
+            .header-text, .footer-text {
+                font-size: 10px;
+                line-height: 12px;
+            }
+            .btn span {
+                font-size: 10px;
+                line-height: 12px;
+                min-height: 16px;
+            }
+        }
+        @media screen and (device-aspect-ratio: 40/71) {
+            .btn span {
+                font-size: 10px;
+                line-height: 12px;
+                min-height: 16px;
+            }
+            .btn-group {
+                transform: translate(-50%, -80%);
             }
         }
     </style>

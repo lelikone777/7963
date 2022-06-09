@@ -54,22 +54,15 @@
             background: linear-gradient(180deg, #06ACFF 1.27%, #FFFFFF 57.81%);
         }
         .banner {
-            max-width: 189px;
-            width: 52%;
-            height: auto;
             position: relative;
+            max-width: 250px;
+            width: 40vmin;
         }
         .banner img {
             position: absolute;
             top: 2vh;
             width: 100%;
 
-        }
-        .age {
-            position: absolute;
-            right: 17px;
-            top: 10px;
-            width: 8%;
         }
         .btn-group {
             display: flex;
@@ -95,11 +88,10 @@
             justify-content: space-around;
         }
         .btn {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 35px;
-            position: relative;
             font-weight: 700;
             font-size: 32px;
             line-height: 44px;
@@ -111,8 +103,8 @@
             height: 12vh;
             width: 319px;
             max-height: 106px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            box-shadow: 0px 5px 0px 0px #004172;
+            min-height: 75px;
+            box-shadow: 0 5px 0 0 #004172;
         }
 
         .btn-center-text {
@@ -142,6 +134,8 @@
             text-align: center;
             color: #161616;
             bottom: -2.2em;
+            width: 100%;
+            left: 0;
         }
         .description {
             position: absolute;
@@ -161,10 +155,11 @@
             padding-top: 4px;
         }
         .cancel {
-            margin-top: 10px;
-            text-align: center;
             position: absolute;
-            bottom: -70px;
+            text-align: center;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         .cancel-btn {
             background: #161616;
@@ -193,25 +188,14 @@
             max-width: 375px;
             margin: 0 auto;
         }
-        @media (max-height: 550px) {
-            /*.banner {*/
-            /*    width: 25%;*/
-            /*}*/
-          
-        }
-        @media (max-width: 374px) {
-          /*.banner {*/
-          /*    width: 77%;*/
-          /*}*/
 
-        }
+
         @media (max-width: 320px) {
             .btn {
                 font-size: 18px;
                 line-height: 22px;
             }
         }
-
         @media (max-width: 350px) {
             .btn-center {
                 width: 90%;
@@ -231,10 +215,44 @@
                 font-size: 18px;
             }
         }
+
+        @media (max-height: 704px) {
+            .banner {
+                width: 35%;
+                transform: translateY(-13px);
+            }
+        }
+        @media (max-height: 585px) {
+            .btn-group {
+                transform: translate(-50%, -15%);
+            }
+            .banner {
+                width: 30%;
+                transform: translateY(-13px);
+            }
+        }
         @media (orientation: landscape) {
             .banner {
                 display: none;
             }
+            .btn-group {
+                transform: translate(-50%, -65%);
+            }
+        }
+
+        /*!*iphone5*!*/
+        @media screen and (device-aspect-ratio: 40/71) and (orientation: landscape) {
+            .header, .footer {
+                font-size: 6px;
+                line-height: 8px;
+            }
+        }
+        @media screen and (device-aspect-ratio: 40/71) {
+            .banner {
+                width: 30%;
+                transform: translateY(-13px);
+            }
+
         }
     </style>
 </head>
