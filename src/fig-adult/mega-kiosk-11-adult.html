@@ -174,6 +174,8 @@
             text-align: center;
             color: #000000;
             bottom: -3.3em;
+            width: 100%;
+            left: 0;
         }
         .description {
             position: absolute;
@@ -196,6 +198,8 @@
             text-align: center;
             position: absolute;
             bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         .cancel-btn {
             background: #000000;
@@ -237,36 +241,12 @@
             max-width: 375px;
             margin: 0 auto;
         }
-        @media (max-height: 550px) {
-            /*.banner {*/
-            /*    width: 25%;*/
-            /*}*/
-          
-        }
-        @media (max-width: 374px) {
-          /*.banner {*/
-          /*    width: 77%;*/
-          /*}*/
 
-        }
+
         @media (max-width: 320px) {
             .btn {
                 font-size: 18px;
                 line-height: 22px;
-            }
-        }
-        @media (max-width: 374px) {
-            .age {
-                left: 1%;
-                top: 45px;
-            }
-        }
-        @media (max-width: 350px) {
-            .btn-center {
-                width: 90%;
-            }
-            .btn-center-text {
-                font-size: 22px;
             }
         }
         @media (max-width: 320px) {
@@ -275,25 +255,68 @@
                 line-height: 22px;
             }
         }
-        @media (max-width: 280px) {
-            .btn-center-text {
-                font-size: 18px;
+
+
+
+        @media (max-height: 600px) {
+            .title {
+                max-width: 200px;
+            }
+            .btn-group {
+                transform: translate(-50%, 0%);
+            }
+            .btn-span {
+                font-size: 10px;
+                line-height: 13px;
+            }
+            .timeline {
+                top: 16vh;
             }
         }
-        @media (orientation: landscape) {
+
+        @media (orientation: landscape)  {
             .banner, .timeline {
                 display: none;
             }
+            .btn-group {
+                transform: translate(-50%, -80%);
+            }
         }
+
+        /*!*iphone5*!*/
+        @media screen and (device-aspect-ratio: 40/71) and (orientation: landscape) {
+            .header-text, .footer-text {
+                font-size: 6px;
+                line-height: 8px;
+            }
+            .btn-group {
+                transform: translate(-50%, -110%);
+            }
+        }
+        @media screen and (device-aspect-ratio: 40/71)
+        and (orientation: portrait) {
+            .btn-span {
+                font-size: 11px;
+                line-height: 14px;
+            }
+            .timeline {
+                top: 16vh;
+            }
+            .header, .footer {
+                font-size: 10px;
+                line-height: 12px;
+            }
+        }
+
     </style>
 </head>
 <body>
 
     <div class="header">
-      <div class="header-text">
-          «Нажатием на кнопку <Продолжить> Вы в явном виде подтверждает свое согласие с подключением подписки &lt;xxx> и
-          <a href="#">Условиями предоставления подписки</a>. Стоимость подписки: <30> руб. с учетом НДС в день. Оплата производится с основного/дополнительного счета. Услуга предоставляется Контент-провайдером &lt;xxx>.
-      </div>
+        <div class="header-text">
+            «Нажатием на кнопку &lt;Далее> Вы в явном виде подтверждает свое согласие с подключением подписки &lt;xxx> и
+            <a href="https://www.google.com/">Условиями предоставления подписки</a>. Стоимость подписки: <30> руб. с учетом НДС в день. Оплата производится с основного/дополнительного счета. Услуга предоставляется Контент-провайдером &lt;xxx>.
+        </div>
     </div>
     <div class="main">
 
